@@ -1,0 +1,57 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+#conteudo {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 5fr 95fr;
+    grid-template-areas: 
+    "header"
+    "section";
+    height: 100%;
+}
+
+header {
+    grid-area: header;
+    background: linear-gradient(90deg, #667eea 0%, #704ca8 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+}
+
+section {
+    grid-area: section;
+    background-color: #f7f7f7f7;
+
+}
+
+.logo {
+    width: auto;
+    animation: aumenta 10s;
+    overflow: hidden;
+}
+@keyframes aumenta {
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px;){
+    header{
+        flex-direction: column;
+    }
+    @keyframes aumenta {
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+}
